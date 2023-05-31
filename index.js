@@ -1,5 +1,11 @@
-var name={
-  id:1234
+//normal function
+function withparameter(a,b){
+ let result = a + b;
+  console.log(result)
 }
-console.log(name.id);
-console.log(name.id);
+withparameter(7,7);
+//arrow fun
+let witharrowparameter=(a,b)=>{
+  console.log(a+b);
+}
+witharrowparameter(7,8);
