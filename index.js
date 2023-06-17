@@ -1,11 +1,22 @@
-//callback functions
-function money(id){
-console.log(`my name is utkarsh ${id}` )
-} 
+//string  double quote
+let str = "Priyanshi"
+//string  double quote
+str='Utkarsh'
+alert(str.toUpperCase())
+//better to use backtick
+str=`UP`;
+alert(str.toLowerCase())
+let str1=`my
+name
+is 
+uP
+`
+alert(str1)
 
-function reg(num1,num2,money){
-  let sum=num1+num2;
-  money(sum);
-  console.log(`need your id ${sum}`)
-}
-reg(6,7,money);
+alert(str[0] + 'a')
+alert(str.at(-2))
+//for loop with str
+for(let char of str)
+  {
+    alert(char)
+  }
