@@ -1,9 +1,18 @@
-let str="    my name is khan     ";
-console.log(str);
-// trim is used for remove extra whiteness or spacing
-console.log(str.trim());
+//function declaration
+function harry() {
+  console.log(`hey yo`);
+}
+harry();
 
-let str1="here is my resume"
-//split is used to access each word of string
-let i=str1.split(' ')
-console.log(i[2]);
+// function expression
+const harry1=function(){
+  console.log(`hey duplicate`)
+}
+harry1();
+
+//arrow function better version of extression
+const harry2=(a,b)=>a+b;
+console.log(harry2(1,1))
+
+
+
