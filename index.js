@@ -1,5 +1,6 @@
 
 //call back function with setTimeout and which leads to callback hell 
+
 // better use promises
 let stocks = {
   Fruits: ["strawberry", "grapes", "banana", "apple"],
@@ -8,43 +9,36 @@ let stocks = {
   toppings: ["chocolate", "peanuts"],
 };
 
-let order = (fruit_name, call_production) => {
-  setTimeout(() => {
-    console.log(`your order ${stocks.Fruits[fruit_name]}`)
-    setTimeout(() => {
-      console.log("cut the fruit")
+let store_open = true;
+
+let order = (time, work) => {
+  return new Promise((resolve, reject) => {
+    if (store_open) {
       setTimeout(() => {
-        console.log(`add ${stocks.liquid[0]} and ${stocks.liquid[1]}`)
-        setTimeout(()=>{
-          console.log("start the machine")
-          setTimeout(()=>{
-           console.log(`select container ${stocks.holder[0]}`) 
-            setTimeout(()=>{
-              console.log(`select toppings ${stocks.toppings[0]} `)
-              setTimeout(()=>{
-                console.log("ice cream is ready")
-              },2000)
-            },3000)
-          },2000)
-        },1000)
-      }, 1000)
-    }, 2000)
-    call_production();
-  }, 2000)
+        resolve(work())
+      }, time)
 
+    }
+    else {
+      reject(console.log('it is closed'))
+    }
+  })
 }
-let production = () => {
-  console.log("go for production")
-}
-order("0", production)
+
+order(1000, () => console.log(`${stocks.Fruits[0]} is selected`))
+
+.then(()=>{
+return order(1000, () => console.log(`waitingg.....`)) 
+})
+.then(()=>{
+  return order(1000,()=> console.log("i am hungry pls do fast"))
+})
 
 
-// setTimeout(()=>{
-//   console.log("hey after 2 sec")
-// },2000)
-// setTimeout(()=>{
-//   console.log("hey after 2 sec")
-// },2000)
-//   setTimeout(()=>{
-//   console.log("hey after 2 sec")
-// },0000)
+.catch(()=>{
+  console.log("failed")
+})
+
+.finally(()=>{
+  console.log("will come later soon")
+})
