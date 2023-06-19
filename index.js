@@ -1,44 +1,49 @@
+// let arr=[1,2,5,7,89,2,7,1];
+// const k=arr.slice(0,5);
+// console.log(k)
+// console.log(arr.splice(0,3,4,6))
+// console.log(arr)
 
-//call back function with setTimeout and which leads to callback hell 
+const item=[
+  {name:"Utkarsh",id:123},
+  {name:"priyanshi",id:120},
+  {name:"sia",id:12},
+  {name:"mala",id:120}
 
-// better use promises
-let stocks = {
-  Fruits: ["strawberry", "grapes", "banana", "apple"],
-  liquid: ["water", "ice"],
-  holder: ["cone", "cup", "stick"],
-  toppings: ["chocolate", "peanuts"],
-};
-
-let store_open = true;
-
-let order = (time, work) => {
-  return new Promise((resolve, reject) => {
-    if (store_open) {
-      setTimeout(() => {
-        resolve(work())
-      }, time)
-
-    }
-    else {
-      reject(console.log('it is closed'))
-    }
-  })
-}
-
-order(1000, () => console.log(`${stocks.Fruits[0]} is selected`))
-
-.then(()=>{
-return order(1000, () => console.log(`waitingg.....`)) 
+]
+//filter to remove the unconditional part
+const filter_name=item.filter((object)=>{
+  return object.id%2==0;
 })
-.then(()=>{
-  return order(1000,()=> console.log("i am hungry pls do fast"))
+//console.log(filter_name)
+
+
+//map to create new array with new chances from previous
+
+const map_item=item.map((obj)=>{
+return obj.name;
+})
+console.log(map_item)
+
+
+//forEach doesnot return but iterate only
+
+item.forEach((it)=>{
+  console.log(it)
 })
 
 
-.catch(()=>{
-  console.log("failed")
-})
+// some and every returns true and false as per requirement
 
-.finally(()=>{
-  console.log("will come later soon")
+const my_fav_id=item.every((obj)=>{
+  return obj.id>=12
 })
+console.log(my_fav_id)
+
+
+//reduce is used to accumulate
+
+const sum_id=item.reduce((initial,currentsum)=>{
+  return  currentsum.id+initial;
+},0)
+console.log(sum_id)
