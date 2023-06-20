@@ -1,49 +1,114 @@
-// let arr=[1,2,5,7,89,2,7,1];
-// const k=arr.slice(0,5);
-// console.log(k)
-// console.log(arr.splice(0,3,4,6))
-// console.log(arr)
+let stocks = {
+    Fruits : ["strawberry", "grapes", "banana", "apple"],
+    liquid : ["water", "ice"],
+    holder : ["cone", "cup", "stick"],
+    toppings : ["chocolate", "peanuts"],
+ };
 
-const item=[
-  {name:"Utkarsh",id:123},
-  {name:"priyanshi",id:120},
-  {name:"sia",id:12},
-  {name:"mala",id:120}
+let is_store_open=true
+let team=()=>{
+  return new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+      resolve(console.log("call me sir"))
+    },2000)
+  })
+}
 
-]
-//filter to remove the unconditional part
-const filter_name=item.filter((object)=>{
-  return object.id%2==0;
-})
-//console.log(filter_name)
+ async function manage(){
 
+  console.log("A")
+  console.log("B")
+  console.log("C")
+  await  team()
+  console.log("D")
+  console.log("E")
+    
+   //  catch{
+   //    console.log("not allowed")
+   //  }
+   // finally{
+   //   console.log("meet next time")
+   // }
+ }
 
-//map to create new array with new chances from previous
-
-const map_item=item.map((obj)=>{
-return obj.name;
-})
-console.log(map_item)
-
-
-//forEach doesnot return but iterate only
-
-item.forEach((it)=>{
-  console.log(it)
-})
-
-
-// some and every returns true and false as per requirement
-
-const my_fav_id=item.every((obj)=>{
-  return obj.id>=12
-})
-console.log(my_fav_id)
+manage()
+console.log("doing the dishes")
+console.log("cleaning the tables")
+console.log("taking orders")
 
 
-//reduce is used to accumulate
 
-const sum_id=item.reduce((initial,currentsum)=>{
-  return  currentsum.id+initial;
-},0)
-console.log(sum_id)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let order=((time,work)=>{
+// return new Promise((resolve,reject)=>{
+
+//   if(is_store_open)
+//   {
+//     setTimeout(()=>{
+//     resolve(work())     
+//     },time)
+//   }
+//   else
+//   {
+//    reject(console.log("not served"))
+//   }
+// })  
+// })
+
+// order(1000,()=>{
+//   console.log(`${stocks.Fruits[0]} is selected`)
+// })
+
+// .then(()=>{
+//   return order(2000,()=>{
+//     console.log("fruits are chopped")
+//   })
+// })
+
+// .then(()=>{
+
+//   return order(2000,()=>{
+//     console.log(`select toppings ${stocks.toppings[0]} `)
+//   })
+// })
+// .then(()=>{
+//   return order(2000,()=>{
+//  console.log("order is completed")
+//   })
+// })
+
+// .catch(()=>{
+//   console.log("not serving")
+// })
+
+// .finally(()=>{
+//   console.log("will meet soon")
+// }) 
