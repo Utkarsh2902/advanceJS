@@ -1,114 +1,36 @@
-let stocks = {
-    Fruits : ["strawberry", "grapes", "banana", "apple"],
-    liquid : ["water", "ice"],
-    holder : ["cone", "cup", "stick"],
-    toppings : ["chocolate", "peanuts"],
- };
-
-let is_store_open=true
-let team=()=>{
-  return new Promise((resolve,reject)=>{
-    setTimeout(()=>{
-      resolve(console.log("call me sir"))
-    },2000)
-  })
-}
-
- async function manage(){
-
-  console.log("A")
-  console.log("B")
-  console.log("C")
-  await  team()
-  console.log("D")
-  console.log("E")
-    
-   //  catch{
-   //    console.log("not allowed")
-   //  }
-   // finally{
-   //   console.log("meet next time")
-   // }
- }
-
-manage()
-console.log("doing the dishes")
-console.log("cleaning the tables")
-console.log("taking orders")
 
 
+// const arr = [1, 2, 3, 4,5]
+// const i=0;
+//with simple function 
+// let sum=function(a,c,i){
+//   return a*c;
+// }
+// console.log(arr.reduce(sum))
 
 
+//with arrow function REDUCE
+// let sum=(a,c,i)=>{
+//   return a+c;
+// }
+//console.log(arr.reduce(sum))
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let order=((time,work)=>{
-// return new Promise((resolve,reject)=>{
-
-//   if(is_store_open)
-//   {
-//     setTimeout(()=>{
-//     resolve(work())     
-//     },time)
-//   }
-//   else
-//   {
-//    reject(console.log("not served"))
-//   }
-// })  
+//MAP
+// const sumarr=arr.map(i=>{
+//   return i*2
 // })
+// console.log(sumarr)
 
-// order(1000,()=>{
-//   console.log(`${stocks.Fruits[0]} is selected`)
+
+//Filter
+// const sumarr=arr.filter(i=>{
+//   return i%2!=0
 // })
+// console.log(sumarr)
 
-// .then(()=>{
-//   return order(2000,()=>{
-//     console.log("fruits are chopped")
-//   })
+
+//forEach
+// const show= arr.forEach((item)=>{
+// console.log(item)
 // })
-
-// .then(()=>{
-
-//   return order(2000,()=>{
-//     console.log(`select toppings ${stocks.toppings[0]} `)
-//   })
-// })
-// .then(()=>{
-//   return order(2000,()=>{
-//  console.log("order is completed")
-//   })
-// })
-
-// .catch(()=>{
-//   console.log("not serving")
-// })
-
-// .finally(()=>{
-//   console.log("will meet soon")
-// }) 
