@@ -1,36 +1,28 @@
+//api example
+
+// var URL="https://api.funtranslations.com/translate/yoda.json?text=I am Utkarsh"
+// fetch(URL)
+// .then(response=>response.json())
+// .then(json=>console.log(json))
 
 
-// const arr = [1, 2, 3, 4,5]
-// const i=0;
-//with simple function 
-// let sum=function(a,c,i){
-//   return a*c;
+//class and objects
+
+// class car{
+
+//   constructor(name,no)
+//   {
+//     this.name=name;
+//     this.no=no;
+//   }
+//  area()
+//   {
+//      console.log(this.name+this.no)
+//   }  
 // }
-// console.log(arr.reduce(sum))
+// const label=new car("utkarsh",10)
+// const label1=new car("priyanshi",10)
 
 
-//with arrow function REDUCE
-// let sum=(a,c,i)=>{
-//   return a+c;
-// }
-//console.log(arr.reduce(sum))
-
-
-//MAP
-// const sumarr=arr.map(i=>{
-//   return i*2
-// })
-// console.log(sumarr)
-
-
-//Filter
-// const sumarr=arr.filter(i=>{
-//   return i%2!=0
-// })
-// console.log(sumarr)
-
-
-//forEach
-// const show= arr.forEach((item)=>{
-// console.log(item)
-// })
+// label.area()
+// label1.area()
