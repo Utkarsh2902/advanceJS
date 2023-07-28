@@ -1,67 +1,39 @@
-// Top coding output based interview questions
+let str="                           I am a Front-End Developer"
+// **convert str in only 1 array
 
-//hoistring works with var not with let and const
-// function name(){
-//   console.log(old);
-//   console.log(young);
-//  console.log(mid);
-//   var old=50;   //undefined
-// let young=5;    //err 
-//   const mid=25;  //err
-// }
-// name()
+// console.log(str.split())
+// console.log([str])
 
+// **convert string to array with each character
 
+// console.log([...str])
 
+// **convert string to array with space or any sequence
 
-//nature of var is global
-// for(var i=0;i<3;i++)
-//   {
-//     setTimeout(()=>console.log(i),1)
-//   }
+// console.log(str.split(' '))
+ // console.log(str.split(''))
 
+// **replace any character
+//console.log(str.replace("I","Am"))
 
-//nature of let is blocked
-// for(let i=0;i<3;i++)
-//   {
-//     setTimeout(()=>console.log(i),1)
-//   }
-
-//console questions
-
-// console.log(+false)
-// console.log(+true)
-// console.log(typeof +false)
-// console.log(typeof +true)
-
-//console.log(+"true")
-// console.log(! true)
-// console.log(typeof !true)
-//console.log(typeof "!true")
-
-//same and different identifers
-// var x=10;
-// var x=11;
-// // let x=50
-// console.log(x)
+// **get substring from string
+// console.log(str.substring(1,3))     //reversable and not includeing ]
+// console.log(str.substr(1,3))       //not reversable and including[]
 
 
-//act as string
-// function hero(a,b){
-//   return a+b;
-// }
-// console.log(hero(1,"5"))
+//** Remove last character
 
-//increment
-
-// let number=0;
-// let number1=0;
-// console.log(number++);
-// console.log(++number);
-// console.log(number);
-// console.log(--number1);
-// console.log(number1--);
-// console.log(number1);
+// console.log(str.substring(0,str.length-1))
 
 
-//**The type of array is object
+//**Remove first character
+
+//console.log(str.substring(1,str.length))
+
+
+// **Remove string before specfic character
+// let temp=str.split("am")
+// console.log(temp[1])
+
+//Remove Extra Space from both side
+// console.log(str.trim())
