@@ -1,125 +1,37 @@
+const { isArray } = require("util");
 
-//sort without methods
+//***1=> Reverse a string
+var str = "utkarsh";
+// var s= str.split("")
+// s.reverse()
+// console.log(s.join(""))
 
- let arr=[8,7,9,0,4,4]
-// let temp;
-// let flag=false
-// while(!flag)
-//   {
-//     flag=true
-//     for(let i=1;i<arr.length;i++)
-//       {
-//         if(arr[i-1]>arr[i])
-//         {
-//           flag=false
-//          temp=arr[i-1];
-//           arr[i-1]=arr[i]
-//           arr[i]=temp
-//         }
-//       }
-    
-//   }
-// console.log(arr)
+//one liner
+//console.log(str.split("").reverse().join(""))
 
+//***2=> checking array or object
 
-//**max min with function in Array
+var a=[]
+var b={}
+//console.log(isArray(b))
 
-// const min1=Math.max(...arr)
-// console.log(min1)
-//**max min without function in Array
-// const newarr= (pre,cur)=>{
-//     return pre>cur?pre:cur
-//   }
-// console.log(arr.reduce(newarr))
+//***3=> how to emply an array
 
+var arr=[1,2,3,4,5]
+arr.length=0;
+//console.log(arr)
 
-//**Second Largest Number
-// var funfun=(arr1)=>{
-//  var max= Math.max(...arr1)
-//  var ind=arr.indexOf(max)
-//   arr1.splice(6,1)
-//   var max1= Math.max(...arr1)
-//   return max1
-// }
-// console.log(funfun(arr))
+//***4=> how to check if it is interger or not
 
-//**sum of all
-// const summ=(pre,cur)=>{
-//   return pre+cur;
-// }
-// console.log(arr.reduce(summ))
+var a=10.5;
+// console.log(Number.isInteger(a))//yes
+// console.log(a%1==0)
 
-//**find missing from 1 to 10
+//***5=> this duplicate array
+var arr=[1,2,3]
+//console.log(arr.concat(arr))
 
-// var min1=Math.min(...arr)
-// var max1=Math.max(...arr)
-// var arr2=[];
-// for(let i=1;i<max1;i++)
-//   {
-//     if(arr.indexOf(i)<0)
-//     {
-//       arr2.push(i)
-//     }
-//   }
-// console.log(arr2)
-
-//**factorial
-// let fact=1
-// for(let i=1;i<=arr;i++)
-//   {
-//     fact=fact*i
-//   }
-// console.log(fact)
-
-//**prime number
-
-// for(let i=2;i<arr;i++)
-//   {
-//     if(arr%i==0)
-//     {
-//       console.log("not prime")
-//       break;
-//     }
-//     else
-//     {
-//       console.log("prime")
-//     }
-//   }
-
-
-//reverse
-
-// var arr1=arr.split("")
-// var strtoarr=arr1.reverse()
-// var arrtostr=arr1.join("")
-// console.log(arrtostr)
-
-
-//palindrome
-
-// var strtoarr=arr.split("")
-// var strtoarr1=strtoarr.reverse()
-// var arrtostr=strtoarr1.join("")
-// if(arrtostr==arr)
-// {
- 
-// console.log("yes palin") 
-// }
-// else{
-//   console.log("not")
-// }
-
-//**merge
-
-//method1
-// const mergearr=[...arr,...arr1]
-// console.log(mergearr)
-//method2
-
-// const merge=arr.concat(arr1)
-// console.log(merge)
-
-//**duplicate
-
-// const duparr=arr.filter((item,index,arr)=>arr.indexOf(item)!=index)
-// console.log(duparr)
+//***6=> how to find duplicates
+var arr=[11,44,55,55,7,2,2]
+var a=arr.filter((element,index,array)=>array.indexOf(element)!==index)
+//console.log(a)
