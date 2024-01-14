@@ -180,3 +180,145 @@ function prime(num){
   }
 }
 //console.log(prime(33))
+
+//***21=> function to get number of occurences of each letter
+
+function occur(str)
+{
+  var obj={}
+  str.split("").forEach(function(element){
+   if(obj.hasOwnProperty(element)===false){
+     obj[element]=1
+   }
+    else{
+      obj[element]++;
+    }
+   
+  })
+   return obj
+} 
+//console.log(occur("771122"))
+
+//***22=> loop an array and sum all elements
+
+function sum(arr){
+  // return arr.reduce(function(a,b){
+  //   return a+b
+  // })
+  //foreach
+  var sum1=0;
+    arr.forEach(function(element){
+    sum1+=element
+  })
+    return sum1
+}
+
+//console.log(sum([1,2,3,4,516]))
+
+//***23=> In an array of numbers and strings all only those are not strings
+
+a=[1,2,3,4,5,"a","b","c"]
+
+
+a.forEach(function(elem){
+  if(typeof elem=="string")
+  {
+   // console.log(elem)
+  }
+})
+
+//***24=> loop an array to remove gender value other than male
+
+
+function gender(arr){
+return arr.filter(function(elem){
+  return elem.gender=='female'
+})
+}
+
+//console.log(gender([{
+      //              name:'Utkarsh',gender:'male'
+        //          },{
+          //          name:'priyanshi',gender:'female'
+            //        },{
+              //      name:'lio',gender:'female'
+                //    },]))
+
+
+//***25=> clone array
+
+
+function clone(arr)
+{
+  return [...arr]
+}
+//console.log(clone([1,2,3,4]))
+
+//***26=> function to reverse string
+
+
+function reversee(str)
+{
+ return str.split("").reverse().join("")
+}
+//console.log(reversee("hello"))
+
+//***27=> how to swap two variables using third variable
+
+function swap(a,b){
+var temp=a;
+  a=b;
+  b=temp
+// console.log(a,b)
+}
+//console.log(swap(1,5))
+
+//***27=> how to swap two variables using without third variable
+
+function swap1(a,b){
+  var a=a+b;
+      b=a-b
+      a=a-b
+  //console.log(a,b)
+}
+//console.log(swap1(10,64))
+
+//***28=> how to merge two array
+
+function merge(arr1,arr2){
+  var arr1=arr1.concat(arr2)
+  return arr1
+  //shorter way
+  //console.log(...arr1,...arr2)
+}
+//console.log(merge([1,2],[4,5]))
+
+//***29=> find the factor of a number
+
+function factor(num){
+  var arr=[];
+ for(var i=1;i<=num;i++){
+   if(num%i==0)
+   {
+     arr.push(i)
+   }
+ }
+  return arr
+}
+//console.log(factor(9))
+
+///***30=> compare two arrays equal or not
+
+function compare(arr1,arr2){
+
+  if(arr1.length!=arr2.length){
+    return false
+  }
+   return arr1.every((elem)=>{
+     if(arr2.indexOf(elem)>-1) {
+        return true
+      }
+      return false
+    })
+}
+console.log(compare([1,2,3],[1,2,3]))
