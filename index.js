@@ -12,7 +12,7 @@ var str = "utkarsh";
 //***2=> checking array or object
 
 var a=[]
-var b={}
+var b={}  
 //console.log(isArray(b))
 
 //***3=> how to emply an array
@@ -321,4 +321,185 @@ function compare(arr1,arr2){
       return false
     })
 }
-console.log(compare([1,2,3],[1,2,3]))
+//console.log(compare([1,2,3],[1,2,3]))
+
+//***31=> first n number of array
+function first(n){
+  var arr=[1,2,3,4,5,6,7,8,9]
+  return arr.splice(0,n)
+}
+//console.log(first(3))
+
+//***32=> last n number of array
+function last(n){
+  var arr=[1,2,3,4,5,6,7,8,9]
+  var s=arr.length-n
+  console.log(s)
+  return arr.splice(s,n)
+}
+//console.log(last(8))
+
+//***33=> find most frequent item of array
+
+function freq(arr){
+  var obj={}
+
+ arr.forEach(function(elem){
+    if(obj.hasOwnProperty(elem)===false){
+      obj[elem]=1
+    }
+    else{
+      obj[elem]++
+    }
+  })
+  var k=Object.keys(obj).reduce(function(a,b){
+    return obj[a]>obj[b]?a:b
+  })
+ //  console.log(k) 
+ // console.log(obj)
+  
+}
+//console.log(freq([1,5,4,6,8,8,8,2,2,2]))
+
+//***34 how to shuffle an array
+
+
+function shuffle(arr){
+
+  var lengthCovered=arr.length-1
+  while(lengthCovered>0){
+   var index=Math.floor(Math.random()*lengthCovered)
+   var temp=arr[lengthCovered]
+    arr[lengthCovered]=arr[index]
+    arr[index] =temp
+    lengthCovered--;
+  }
+  return arr
+  
+}
+//console.log(shuffle([1,2,3,4,5,6]))
+///***35=> Union of array
+
+function union(arr1,arr2){
+return [...new Set(arr1.concat(arr2))];
+}
+//console.log(union([1,2,3],[3,4,5]))
+
+//***36=> to find the fibonacci series
+
+function fibo(n){
+  var arr=[0,1]
+
+  for(var i=2;i<n;i++)
+    {
+     arr.push(arr[i-1]+arr[i-2]) 
+    }
+  return arr
+}
+//console.log(fibo(7))
+
+//***37=> Right rotational array 
+const rotateArray1 = function(nums, k) {
+
+  for (let i = 0; i < k; i++) {
+      nums.unshift(nums.pop());
+  }
+
+  return nums;
+}
+//console.log(rotateArray1([ 1, 2, 3, 4, 5],2))
+
+//***38=> Right Half Pyramid Pattern
+//* 
+//* * 
+//* * * 
+//* * * * 
+//* * * * *
+var strrr=""   
+   for(var i=0;i<5;i++)
+  {
+    for(var j=0;j<=i;j++)
+    {
+      strrr+="*"
+    }
+     strrr+="\n"
+  }
+
+//console.log(strrr)
+//***38=> Left Half Pyramid Pattern
+
+   // *
+  // **
+  //***
+ //****
+//*****
+
+var str=""
+n=5
+ for(var i=0;i<n;i++)
+ {
+  for(var j=0;j<n-i;j++)
+  {
+      str+=""
+  }
+   for(var k=0;k<=i;k++)
+   {
+      str+="*"
+   }
+   str+="\n"
+ }
+
+//console.log(str)
+
+//39  Square Pattern
+//*****
+//*****
+//*****
+//*****
+//*****
+
+var str=""
+n=5
+
+for(var i=0;i<n;i++)
+  {
+    for(var j=0;j<n;j++)
+    {
+      str+="*"
+    }
+    str+="\n"
+  }
+//console.log(str)
+
+
+//hollow square pattern
+
+//*****
+//*   *
+//*   *
+//*   *
+//*****
+
+var str=""
+n=5
+ for(var i=0;i<n;i++)
+ {
+   for(var j=0;j<n;j++)
+     {
+       if(i==0 || i==n-1)
+       {
+         str+="*"
+       }
+       else{
+         if(j==0 || j==n-1)
+          {
+            str+="*"
+          }
+         else{
+           str+=" "
+         }
+       }
+     }
+   str+="\n"
+ }
+console.log(str)
